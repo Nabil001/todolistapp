@@ -5,6 +5,7 @@
         {{ form_start(form, {'action' : path('task_edit', { 'id' : task.id })}) }}
             {{ form_widget(form) }}
             <p class="blockquote-reverse">
+                Auteur :
                 {% if task.author is not null %}
                     {{ task.author.getUsername() }}
                 {% else %}
