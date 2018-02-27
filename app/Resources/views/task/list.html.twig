@@ -16,7 +16,7 @@
                     <p>{{ task.content }}</p>
                     <p class="blockquote-reverse">
                         {% if task.author is defined %}
-                            {{ task.author }}
+                            {{ task.author.getUsername() }}
                         {% else %}
                             anonyme
                         {% endif %}
