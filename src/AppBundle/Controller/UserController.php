@@ -54,7 +54,7 @@ class UserController extends Controller
         $form->handleRequest($request);
 
         if ($form->isValid()) {
-            $this->get('app.user_refresher')->refreshRolesIfAuthenticated($user);
+            $this->get('app.user_refresher')->refreshIfAuthenticated($user);
 
             $password = $this->get('security.password_encoder')->encodePassword($user, $user->getPassword());
             $user->setPassword($password);

@@ -22,7 +22,7 @@ class UserRefresher
      * @param User $user
      * @return void
      */
-    public function refreshRolesIfAuthenticated(User $user)
+    public function refreshIfAuthenticated(User $user)
     {
         $authenticatedUser = $this->tokenStorage->getToken()->getUser();
 
