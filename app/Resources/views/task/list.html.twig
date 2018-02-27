@@ -15,7 +15,7 @@
                     <h4><a href="{{ path('task_edit', {'id' : task.id }) }}">{{ task.title }}</a></h4>
                     <p>{{ task.content }}</p>
                     <p class="blockquote-reverse">
-                        {% if task.author is defined %}
+                        {% if task.author is not null %}
                             {{ task.author.getUsername() }}
                         {% else %}
                             anonyme
