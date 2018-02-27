@@ -4,7 +4,14 @@
     <div class="row">
         {{ form_start(form, {'action' : path('task_edit', { 'id' : task.id })}) }}
             {{ form_widget(form) }}
-
+            <p class="blockquote-reverse">
+                Auteur :
+                {% if task.author is not null %}
+                    {{ task.author.getUsername() }}
+                {% else %}
+                    anonyme
+                {% endif %}
+            </p>
             <button type="submit" class="btn btn-success pull-right">Modifier</button>
         {{ form_end(form) }}
     </div>
