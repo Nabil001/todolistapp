@@ -29,6 +29,10 @@ class TaskController extends Controller
         $form->handleRequest($request);
 
         if ($form->isValid()) {
+            if ($this->isGranted('IS_AUTHENTICATED_FULLY')) {
+                $task->setAuthor($this->getUser());
+            }
+
             $em = $this->getDoctrine()->getManager();
 
             $em->persist($task);
