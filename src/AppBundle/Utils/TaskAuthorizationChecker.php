@@ -33,11 +33,8 @@ class TaskAuthorizationChecker
         $author = $task->getAuthor();
         $user = $this->tokenStorage->getToken()->getUser();
         $isAdmin = $this->authorizationChecker->isGranted('ROLE_ADMIN');
-
         $isAuthenticated = $this->authorizationChecker->isGranted('IS_AUTHENTICATED_FULLY');
-        if (null === $author && !$isAdmin || null !== $author && (!$isAuthenticated || $user->getUsername() != $author->getUsername())) {
-            return false;
-        }
-        return true;
+
+        return null === $author && !$isAdmin || null !== $author && (!$isAuthenticated || $user->getUsername() != $author->getUsername());
     }
 }
