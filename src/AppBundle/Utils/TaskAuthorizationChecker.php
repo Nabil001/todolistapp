@@ -35,6 +35,6 @@ class TaskAuthorizationChecker
         $isAdmin = $this->authorizationChecker->isGranted('ROLE_ADMIN');
         $isAuthenticated = $this->authorizationChecker->isGranted('IS_AUTHENTICATED_FULLY');
 
-        return null === $author && !$isAdmin || null !== $author && (!$isAuthenticated || $user->getUsername() != $author->getUsername());
+        return !(null === $author && !$isAdmin || null !== $author && (!$isAuthenticated || $user->getUsername() != $author->getUsername()));
     }
 }

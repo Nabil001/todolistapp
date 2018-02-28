@@ -15,3 +15,9 @@ services:
     app.task_authorization_checker:
         class: AppBundle\Utils\TaskAuthorizationChecker
         arguments: ["@security.token_storage", "@security.authorization_checker"]
+
+    app.is_allowed_to_delete_task_extension:
+        class: AppBundle\Twig\IsAllowedToDeleteTaskExtension
+        arguments: ["@app.task_authorization_checker"]
+        tags:
+            - { name: twig.extension }
