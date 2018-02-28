@@ -88,8 +88,7 @@ class TaskController extends Controller
      */
     public function deleteTaskAction(Task $task)
     {
-        $author = $task->getAuthor();
-        if (null === $author && !$this->isGranted('ROLE_ADMIN') || null !== $author && (!$this->isGranted('IS_AUTHENTICATED_FULLY') || $this->getUser()->getUsername() != $author->getUsername())) {
+        if (!$this->get('app.task_authorization_checker')->isAllowedToDelete($task)) {
             throw $this->createAccessDeniedException();
         }
 
