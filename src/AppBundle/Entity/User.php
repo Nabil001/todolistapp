@@ -39,6 +39,14 @@ class User implements UserInterface
      */
     private $email;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(type="string", length=50)
+     * @Assert\Choice(choices={"ROLE_USER","ROLE_ADMIN"}, message="Rôle invalide.")
+     */
+    private $role;
+
     public function getId()
     {
         return $this->id;
@@ -79,9 +87,26 @@ class User implements UserInterface
         $this->email = $email;
     }
 
+    /**
+     * @return string
+     */
+    public function getRole()
+    {
+        return $this->role;
+    }
+
+    /**
+     * @param $role
+     * @return void
+     */
+    public function setRole($role)
+    {
+        $this->role = $role;
+    }
+
     public function getRoles()
     {
-        return array('ROLE_USER');
+        return array($this->role);
     }
 
     public function eraseCredentials()
