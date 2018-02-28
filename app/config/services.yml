@@ -11,3 +11,7 @@ services:
     app.user_refresher:
         class: AppBundle\Utils\UserRefresher
         arguments: ["@security.token_storage"]
+
+    app.task_authorization_checker:
+        class: AppBundle\Utils\TaskAuthorizationChecker
+        arguments: ["@security.token_storage", "@security.authorization_checker"]
