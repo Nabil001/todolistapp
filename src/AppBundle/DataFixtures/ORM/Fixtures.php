@@ -6,6 +6,7 @@ use AppBundle\Entity\Task;
 use AppBundle\Entity\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 class Fixtures extends Fixture
 {
