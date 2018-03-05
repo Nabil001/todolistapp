@@ -90,7 +90,7 @@ class UserControllerTest extends WebTestCase
     {
         return $this->em->getRepository(User::class)->findAll()[0];
     }
-    /*
+
     public function testUsersAnonymous()
     {
         $this->client->request('GET', '/tasks');
@@ -249,7 +249,7 @@ class UserControllerTest extends WebTestCase
 
         $this->logOut();
     }
-*/
+
     public function testUserEditInvalidParameters()
     {
         $this->logInAdmin();
@@ -270,7 +270,6 @@ class UserControllerTest extends WebTestCase
         $this->logOut();
     }
 
-        /*
     public function testUserEditValidParameters()
     {
         $this->logInAdmin();
@@ -306,5 +305,4 @@ class UserControllerTest extends WebTestCase
 
         $this->logOut();
     }
-        */
 }
