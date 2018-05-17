@@ -16,4 +16,5 @@ Cela inclue entre autres :
 - La créaton et l'utilisation de service privé est à privilégier.
 - Une route doit être indiquée par l'annotation `@Route` issue du `SensioFrameworkExtraBundle`.
 - Tous les <i>templates</i> Twig doivent se trouver dans le dossier `app/Resources/views`.
+// 5-10-20
 ## Comment soumettre une pull request
