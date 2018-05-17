@@ -19,8 +19,8 @@ Cela inclue entre autres :
 - Tous les <i>templates</i> Twig doivent se trouver dans le dossier `app/Resources/views`.
 Il est également intéressant de respecter la règle des "5-10-20", stipulant qu'un `Controller` doit définir 5 variables au maximum, contenir 10 actions au maximum, et inclure 20 lignes de code au maximum pour chaque action.
 ## Comment soumettre une <i>pull request</i>
-Pour la soumission d'une <i>pull request</i>, nous utilisons ici le (protocole)[https://gist.github.com/MarcDiethelm/7303312] suivant :
-- (Créez)[https://help.github.com/articles/creating-a-pull-request-from-a-fork/] une <i>fork</i> de ce projet sur votre Github
+Pour la soumission d'une <i>pull request</i>, nous utilisons ici le [protocole](https://gist.github.com/MarcDiethelm/7303312) suivant :
+- [Créez](https://help.github.com/articles/creating-a-pull-request-from-a-fork/) une <i>fork</i> de ce projet sur votre Github
 - Clonez la <i>fork</i> sur votre machine, en local (votre <i>repository</i> distant est `origin`).
 - Ajoutez le <i>repository</i> d'origine (celui depuis lequel est écrit le présent document) en tant que distant, et nommez-le `upstream`.
 - Créez une nouvelle branche depuis la branche `develop` elle existe, sinon depuis la branche `master`.
@@ -28,7 +28,7 @@ Pour la soumission d'une <i>pull request</i>, nous utilisons ici le (protocole)[
 - Lancez les tests existant.
 - Adaptez ou écrivez les tests, testant la modification apportée, et lancez-les.
 - Complétez la documentation du projet si une nouvelle fonctionnalité a été implémentée.
-- (Compressez)[https://help.github.com/articles/about-git-rebase/] vos <i>commits</i> en un seul.
+- [Compressez](https://help.github.com/articles/about-git-rebase/) vos <i>commits</i> en un seul.
 - Poussez votre branche sur votre <i>repository</i> `origin`.
 - Depuis votre <i>fork</i>, ouvez une <i>pull request</i>. Ciblez la branche `develop` de ce projet si elle existe, sinon la branche `master`. Décrivez au mieux la modification apportée dans un commentaire associé à la <i>pull request</i>.
 - Une fois la <i>pull request</i> approuvée et fusionnée, vous pouvez obtenir le projet en clonant le <i>repository</i> distant `upstream`, précédemment ajouté.
