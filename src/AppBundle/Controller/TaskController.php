@@ -5,6 +5,7 @@ namespace AppBundle\Controller;
 use AppBundle\Entity\Task;
 use AppBundle\Entity\User;
 use AppBundle\Form\TaskType;
+use Doctrine\ORM\EntityManagerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -22,19 +23,16 @@ class TaskController extends Controller
     /**
      * @Route("/tasks/create", name="task_create")
      */
-    public function createAction(Request $request)
+    public function createAction(Request $request, EntityManagerInterface $em)
     {
         $task = new Task();
-        $form = $this->createForm(TaskType::class, $task);
-
-        $form->handleRequest($request);
+        $form = $this->createForm(TaskType::class, $task)
+            ->handleRequest($request);
 
         if ($form->isValid()) {
             if ($this->isGranted('IS_AUTHENTICATED_FULLY')) {
                 $task->setAuthor($this->getUser());
             }
-
-            $em = $this->getDoctrine()->getManager();
 
             $em->persist($task);
             $em->flush();
